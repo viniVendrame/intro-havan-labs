@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,8 @@ namespace Data
     {
 
         // encapsulamento - Propriedades
+        [Key]
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public int Idade { get; set; }
@@ -25,6 +28,11 @@ namespace Data
             this.Idade = idade;
             this.Email = email;
             this.Endereco = endereco;
+        }
+
+        public Usuario()
+        {
+
         }
        
     }
