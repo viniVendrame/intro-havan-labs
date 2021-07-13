@@ -52,39 +52,8 @@ namespace Ex001
                 switch (opcao)
                 {
                     case 1:
-                        string resposta = "";
-                        List<Usuario> usuarios = new List<Usuario>();
-                        do
-                        {
-                            Console.WriteLine("\n--- Cadastro de Cliente ---\n");
-                            Console.Write("Nome: ");
-                            string nome = Validacao.ValidarDados();
-                            Console.Write("Sobrenome: ");
-                            string sobrenome = Validacao.ValidarDados();
-                            Console.Write("Idade: ");
-                            int idade = Validacao.ValidarInteiros();
-                            Console.Write("E-mail: ");
-                            string email = Validacao.ValidarDados();
-                            Console.Write("Endereço: ");
-                            string endereco = Validacao.ValidarDados();
-                            Usuario user = new Usuario(nome, sobrenome, idade, email, endereco);
-                            usuarios.Add(user);
-
-                            Console.WriteLine();
-
-                            Console.WriteLine("Deseja cadastrar mais 1? (y/n)");
-                            resposta = Console.ReadLine();
-                        } while (resposta == "y");
-
-                        //lambda
-                        //Usuario userSelect1 = usuarios.FirstOrDefault(u => u.nome.Equals("cimbinha"));
-                        //Usuario userSelect2 = (from u in usuarios where u.nome == "chimbinha" select u).FirstOrDefault();
-
-                        foreach (var item in usuarios)
-                        {
-                            Console.WriteLine($"\nSeu nome: {item.Nome.ToLower()}\nSeu sobrenome: {item.Sobrenome.ToLower()}\nSua idade: {item.Idade}\nSeu email: {item.Email.ToLower()}\nSeu Endereço: {item.Endereco.ToLower()}");
-                        }
-
+                        ModuloUsuario moduloUsuario = new ModuloUsuario();
+                        moduloUsuario.Create();
                         break;
 
                     case 2:
